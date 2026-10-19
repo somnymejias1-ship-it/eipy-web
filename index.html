@@ -1,0 +1,657 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="description" content="Anthony Prado, Eipy: creador de contenido de San Felipe, Venezuela. Infomerciales, sketches de comedia y publicidad integrada para marcas.">
+<meta property="og:title" content="Eipy · @soyeipy">
+<meta property="og:description" content="Anthony Prado, Eipy: creador de contenido de San Felipe, Venezuela. Infomerciales, sketches de comedia y publicidad integrada para marcas.">
+<meta property="og:image" content="img/eipy-01.jpg">
+<meta property="og:type" content="website">
+<meta name="theme-color" content="#ECEAE6">
+<title>Eipy · @soyeipy</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@62..125,300..900&family=Geist:wght@300..700&family=Geist+Mono:wght@400;500&display=swap">
+<style>
+html,body{margin:0}img{max-width:100%}[hidden]{display:none!important}
+/* Layout: estudio fotográfico — fondo gris cálido del ciclorama, tipografía expandida tipo cartel, tarjetas 9:16 que flotan; una sola nota de rojo señal */
+:root{
+  --bg:#ECEAE6;        /* ciclorama */
+  --paper:#F7F6F3;     /* superficies */
+  --ink:#141312;       /* texto */
+  --muted:#77716A;     /* texto secundario */
+  --line:#D9D5CE;      /* bordes */
+  --sand:#CDBBA0;      /* tono camiseta */
+  --accent:#D23A22;    /* rojo señal */
+  --night:#0F0F0E;     /* bandas oscuras */
+  --f-display:"Archivo","Arial Black","Helvetica Neue",sans-serif;
+  --f-body:"Geist",system-ui,-apple-system,"Segoe UI",sans-serif;
+  --f-mono:"Geist Mono",ui-monospace,"SFMono-Regular",Menlo,monospace;
+  --gl:max(16px, env(safe-area-inset-left, 0px));
+  --gr:max(16px, env(safe-area-inset-right, 0px));
+  --ease:cubic-bezier(.16,1,.3,1);
+  color-scheme:light;
+}
+*{box-sizing:border-box}
+html{background:var(--bg)}
+body{background:var(--bg);color:var(--ink);font-family:var(--f-body);font-size:16px;line-height:1.6;overflow-x:hidden;-webkit-font-smoothing:antialiased}
+body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset-top,0px);z-index:60;background:var(--bg)}
+a{color:inherit}
+:focus-visible{outline:2px solid var(--accent);outline-offset:3px;border-radius:6px}
+h1,h2,h3,p{margin:0}
+h2{font-family:var(--f-display);font-stretch:125%;font-weight:800;text-transform:uppercase;letter-spacing:-.01em;line-height:.92;text-wrap:balance;font-size:clamp(2.6rem,7vw,6.2rem)}
+.wrap{padding-left:var(--gl);padding-right:var(--gr);max-width:1400px;margin-inline:auto}
+.label{font-family:var(--f-mono);font-size:.72rem;letter-spacing:.14em;text-transform:uppercase;color:var(--muted)}
+.label.dot::before{content:"";display:inline-block;width:6px;height:6px;border-radius:50%;background:var(--accent);margin-right:.7em;vertical-align:middle;transform:translateY(-1px)}
+.sec{padding-block:clamp(80px,12vw,170px)}
+.sec-head{display:flex;flex-wrap:wrap;justify-content:space-between;align-items:end;gap:20px 48px;margin-bottom:clamp(36px,5vw,64px)}
+.sec-head .lede{max-width:42ch;color:var(--muted)}
+.btn{display:inline-flex;align-items:center;gap:.6em;font:600 .95rem/1 var(--f-body);text-decoration:none;border:0;cursor:pointer;border-radius:999px;padding:1em 1.5em;background:var(--ink);color:var(--paper);transition:background .3s var(--ease)}
+.btn:hover{background:var(--accent)}
+.btn.light{background:transparent;color:var(--ink);box-shadow:inset 0 0 0 1px var(--line)}
+.btn.light:hover{box-shadow:inset 0 0 0 1px var(--ink);background:transparent}
+.btn .arr{display:inline-block;transition:transform .3s var(--ease)}
+.btn:hover .arr{transform:translateX(3px)}
+.ico{width:1em;height:1em;display:block;flex:none}
+
+/* NAV */
+.nav{position:sticky;top:env(safe-area-inset-top,0px);z-index:50;transition:background .4s}
+.nav.solid{background:color-mix(in srgb,var(--bg) 80%,transparent);backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px)}
+.nav .wrap{display:flex;align-items:center;justify-content:space-between;gap:16px;padding-block:16px}
+.brand{font-family:var(--f-display);font-stretch:125%;font-weight:800;font-size:1.25rem;letter-spacing:-.01em;text-decoration:none}
+.brand i{font-style:normal;color:var(--accent)}
+.nav ul{display:flex;gap:28px;list-style:none;margin:0;padding:0;font-size:.9rem;font-weight:500}
+.nav ul a{text-decoration:none;color:var(--muted);transition:color .2s}
+.nav ul a:hover{color:var(--ink)}
+.nav .btn{padding:.8em 1.2em;font-size:.88rem}
+@media (max-width:900px){.nav ul{display:none}}
+
+/* HERO: foto → nombre → recorte de Anthony encima */
+.hero{position:relative;padding-top:clamp(20px,4vw,48px);overflow:hidden}
+.hero-meta{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap}
+.stage{position:relative;display:grid;place-items:center;margin-top:clamp(28px,5vw,64px);min-height:clamp(320px,38vw,540px)}
+.figure{position:relative;width:clamp(200px,22vw,320px);aspect-ratio:4/5}
+.figure .photo,.figure .cut{position:absolute;inset:0;border-radius:18px;overflow:hidden}
+.figure .photo{z-index:1;box-shadow:0 40px 80px -30px rgba(20,19,18,.35)}
+.figure .cut{z-index:3;pointer-events:none}
+.figure img{position:absolute;left:0;top:-10%;width:100%;height:120%;object-fit:cover;object-position:50% 20%;display:block}
+.word{position:absolute;z-index:2;left:50%;width:0;top:0;bottom:22%;display:flex;justify-content:center;align-items:center;pointer-events:none}
+.word h1{font-family:var(--f-display);font-stretch:125%;font-weight:900;font-size:clamp(5.2rem,22vw,20rem);line-height:.8;letter-spacing:-.02em;display:flex;color:var(--ink);white-space:nowrap}
+.word h1 span{display:inline-block}
+.word .ghost{position:absolute;top:50%;left:50%;font-family:var(--f-display);font-stretch:125%;font-weight:900;font-size:clamp(5.2rem,22vw,20rem);line-height:.8;letter-spacing:-.02em;white-space:nowrap;color:transparent;-webkit-text-stroke:1.2px var(--ink);opacity:.3;transform:translate(-50%,-6%)}
+.hero-sub{position:relative;z-index:5;display:flex;flex-wrap:wrap;justify-content:space-between;align-items:end;gap:24px 48px;margin-top:clamp(28px,4vw,48px)}
+.hero-sub p{max-width:44ch;font-size:clamp(1rem,1.4vw,1.15rem);color:#3d3a36}
+.hero-sub p b{font-weight:600;color:var(--ink)}
+.hero-sub .acts{display:flex;flex-wrap:wrap;gap:10px}
+
+/* RUEDA */
+.wheel-zone{position:relative;height:clamp(250px,30vw,400px);margin-top:clamp(36px,5vw,64px);overflow:hidden;-webkit-mask-image:linear-gradient(to right,transparent,#000 12%,#000 88%,transparent);mask-image:linear-gradient(to right,transparent,#000 12%,#000 88%,transparent)}
+.wheel{position:absolute;left:50%;width:0;height:0;will-change:transform}
+.wcard{position:absolute;left:0;top:0}
+.wcard .media{width:var(--cw,130px);aspect-ratio:9/16;border-radius:14px;box-shadow:0 18px 40px -18px rgba(20,19,18,.45)}
+
+/* MEDIA */
+.media{position:relative;overflow:hidden;background:var(--sand);isolation:isolate}
+.media .ph{position:absolute;inset:0;display:flex;flex-direction:column;justify-content:flex-end;padding:12% 11%;color:var(--paper)}
+.media .ph .t{font-family:var(--f-display);font-stretch:112%;font-weight:700;font-size:clamp(.82rem,1.15vw,1.05rem);line-height:1.05;text-transform:uppercase;text-wrap:balance}
+.media video{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;transition:transform 1.2s var(--ease)}
+.tone-ink{background:var(--ink)}
+.tone-accent{background:var(--accent)}
+.tone-sand{background:var(--sand)}
+.tone-sand .ph,.tone-paper .ph{color:var(--ink)}
+.tone-paper{background:var(--paper)}
+.tone-stone{background:#8C847A}
+.media.photo-tile img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+.shade::after{content:"";position:absolute;inset:45% 0 0;background:linear-gradient(transparent,rgba(15,15,14,.6));z-index:1;pointer-events:none}
+
+/* Botones de red sobre el video */
+.nets{position:absolute;top:12px;right:12px;z-index:3;display:flex;gap:6px}
+.net{width:38px;height:38px;border-radius:50%;display:grid;place-items:center;background:var(--paper);color:var(--ink);font-size:18px;text-decoration:none;box-shadow:0 6px 18px -6px rgba(0,0,0,.35);transition:background .25s,color .25s,transform .3s var(--ease)}
+.net:hover{background:var(--ink);color:var(--paper);transform:scale(1.08)}
+
+/* QUIÉN ES */
+.about{display:grid;grid-template-columns:minmax(0,5fr) minmax(0,7fr);gap:clamp(32px,6vw,96px);align-items:center}
+@media (max-width:860px){.about{grid-template-columns:minmax(0,1fr)}}
+.frame{position:relative;border-radius:22px;overflow:hidden;aspect-ratio:4/5;max-width:100%;background:var(--night)}
+.frame img{position:absolute;left:0;top:-10%;width:100%;height:120%;object-fit:cover;display:block}
+.frame .tag{position:absolute;left:16px;bottom:16px;background:var(--paper);color:var(--ink);border-radius:999px;padding:.5em 1em;font-size:.8rem;font-weight:600}
+.statement{font-family:var(--f-display);font-weight:600;font-size:clamp(1.7rem,3.5vw,3.1rem);line-height:1.08;letter-spacing:-.015em;text-wrap:balance;margin-top:22px}
+.statement em{font-style:normal;color:var(--accent)}
+.facts{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,220px),1fr));gap:28px;margin-top:clamp(32px,4vw,52px);padding-top:28px;border-top:1px solid var(--line)}
+.facts h3{font-family:var(--f-mono);font-weight:500;font-size:.72rem;letter-spacing:.14em;text-transform:uppercase;color:var(--muted);margin-bottom:8px}
+.facts p{font-size:.95rem;color:#3d3a36}
+
+/* INFOMERCIALES */
+.info{background:var(--night);color:var(--paper)}
+.info .sec-head .lede{color:#A8A29A}
+.info .label{color:#A8A29A}
+.i-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:clamp(14px,2vw,28px);align-items:start}
+.i-grid .icard:nth-child(2){margin-top:clamp(0px,6vw,90px)}
+@media (max-width:860px){.i-grid{grid-template-columns:minmax(0,1fr)}.i-grid .icard:nth-child(2){margin-top:0}}
+.icard{display:flex;flex-direction:column;gap:14px}
+.icard .media{aspect-ratio:9/16;border-radius:20px;background:#1d1c1a;box-shadow:0 40px 70px -30px rgba(0,0,0,.8)}
+@media (max-width:860px){.icard .media{aspect-ratio:4/5}}
+.icard .badge{position:absolute;top:14px;left:14px;z-index:3;background:var(--accent);color:var(--paper);font-family:var(--f-mono);font-size:.68rem;letter-spacing:.1em;text-transform:uppercase;border-radius:999px;padding:.45em .9em}
+.icard .who{font-family:var(--f-display);font-stretch:118%;font-weight:700;font-size:clamp(1.4rem,2.2vw,1.9rem);text-transform:uppercase;letter-spacing:-.01em;line-height:1}
+.icard .cap{color:#A8A29A;font-size:.95rem}
+.icard:hover .media video{transform:scale(1.04)}
+.i-specs{display:flex;flex-wrap:wrap;gap:8px;margin-top:clamp(36px,5vw,56px)}
+.i-specs span{font-family:var(--f-mono);font-size:.72rem;letter-spacing:.08em;text-transform:uppercase;color:#CFC9C0;border-radius:999px;padding:.6em 1em;box-shadow:inset 0 0 0 1px #34322F}
+
+/* NÚMEROS */
+.n-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:clamp(16px,2vw,24px)}
+@media (max-width:860px){.n-grid{grid-template-columns:minmax(0,1fr)}}
+.n{background:var(--paper);border-radius:22px;padding:clamp(24px,3vw,36px);display:flex;flex-direction:column;justify-content:space-between;min-height:220px}
+.n .big{font-family:var(--f-display);font-stretch:125%;font-weight:800;font-size:clamp(3.4rem,7vw,6.4rem);line-height:.85;letter-spacing:-.03em;font-variant-numeric:tabular-nums}
+.n .big sup{font-size:.4em;vertical-align:top;margin-left:.05em;color:var(--accent);position:relative;top:.15em}
+.n p{color:var(--muted);font-size:.92rem;margin-top:16px}
+.n.dark{background:var(--ink);color:var(--paper)}
+.n.dark p,.n.dark .label{color:#A8A29A}
+.split{display:grid;grid-template-columns:minmax(0,7fr) minmax(0,5fr);gap:clamp(24px,5vw,80px);margin-top:clamp(40px,6vw,80px);align-items:center}
+@media (max-width:860px){.split{grid-template-columns:minmax(0,1fr)}}
+.plats{display:grid;gap:26px}
+.plat .row{display:flex;justify-content:space-between;align-items:baseline;gap:12px;margin-bottom:10px;flex-wrap:wrap}
+.plat .row b{font-weight:600;display:flex;align-items:center;gap:8px}
+.plat .row span{font-family:var(--f-mono);font-size:.82rem;color:var(--muted);font-variant-numeric:tabular-nums}
+.track{height:6px;border-radius:99px;background:var(--line);overflow:hidden}
+.track i{display:block;height:100%;border-radius:99px;background:var(--ink);transform-origin:left}
+.plat:first-child .track i{background:var(--accent)}
+.plat .val{font-family:var(--f-display);font-stretch:125%;font-weight:800;font-size:1.6rem;letter-spacing:-.02em;margin-top:6px}
+.float-card{position:relative;justify-self:center;width:min(100%,380px)}
+.float-card .frame{background:#ddd;transform:rotate(3deg)}
+.float-card .badge{position:absolute;right:-8px;top:24px;background:var(--accent);color:var(--paper);border-radius:999px;padding:.55em 1em;font-size:.8rem;font-weight:600;transform:rotate(6deg)}
+
+/* VIRALES */
+.v-grid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:clamp(14px,1.8vw,24px)}
+@media (max-width:1000px){.v-grid{grid-template-columns:repeat(2,minmax(0,1fr))}}
+.vcard{display:flex;flex-direction:column;gap:10px}
+.vcard .media{aspect-ratio:9/16;border-radius:18px;box-shadow:0 26px 50px -30px rgba(20,19,18,.5)}
+.vcard:hover .media video{transform:scale(1.05)}
+.rank{position:absolute;top:12px;left:12px;z-index:3;background:var(--paper);color:var(--ink);font-family:var(--f-mono);font-size:.75rem;border-radius:999px;padding:.35em .75em}
+.vcard .views{position:absolute;bottom:12px;left:14px;right:14px;z-index:2;display:flex;justify-content:space-between;align-items:end;color:var(--paper)}
+.vcard .views b{font-family:var(--f-display);font-stretch:125%;font-weight:800;font-size:clamp(1.5rem,2.4vw,2.2rem);line-height:1;letter-spacing:-.02em}
+.vcard .cap{font-weight:600;font-size:.98rem;line-height:1.3}
+.vcard .split-views{font-family:var(--f-mono);font-size:.72rem;color:var(--muted);display:flex;flex-wrap:wrap;gap:4px 12px}
+.vcard .split-views span{display:inline-flex;align-items:center;gap:5px}
+@media (max-width:520px){.net{width:32px;height:32px;font-size:15px}}
+
+/* PORTAFOLIO */
+.p-bar{display:flex;flex-wrap:wrap;justify-content:space-between;align-items:center;gap:16px;margin-bottom:28px}
+.chips{display:flex;flex-wrap:wrap;gap:8px}
+.chips button{font:500 .9rem/1 var(--f-body);border:0;cursor:pointer;border-radius:999px;padding:.75em 1.15em;background:transparent;color:var(--ink);box-shadow:inset 0 0 0 1px var(--line);transition:background .3s var(--ease),color .3s}
+.chips button span{font-family:var(--f-mono);font-size:.72rem;color:var(--muted);margin-left:.4em}
+.chips button[aria-pressed="true"]{background:var(--ink);color:var(--paper);box-shadow:none}
+.chips button[aria-pressed="true"] span{color:#A8A29A}
+.arrows{display:flex;gap:8px}
+.arrows button{width:48px;height:48px;border-radius:50%;border:0;cursor:pointer;background:var(--paper);color:var(--ink);font-size:1.1rem;box-shadow:inset 0 0 0 1px var(--line);transition:background .2s,color .2s}
+.arrows button:hover{background:var(--ink);color:var(--paper)}
+.rail{display:flex;gap:clamp(14px,1.6vw,22px);overflow-x:auto;overscroll-behavior-x:contain;scroll-snap-type:x proximity;padding:30px var(--gr) 40px var(--gl);scroll-padding-left:var(--gl);scrollbar-width:none;cursor:grab}
+@media (min-width:1432px){.rail{padding-left:calc((100vw - 1400px)/2 + 16px);scroll-padding-left:calc((100vw - 1400px)/2 + 16px)}}
+.rail::-webkit-scrollbar{display:none}
+.rail.dragging{cursor:grabbing;scroll-snap-type:none}
+.rail.dragging a{pointer-events:none}
+.pcard{flex:0 0 auto;width:clamp(210px,19vw,270px);scroll-snap-align:start;text-decoration:none}
+.pcard[hidden]{display:none!important}
+.pcard .bob{display:flex;flex-direction:column;gap:10px}
+.pcard .media{aspect-ratio:9/16;border-radius:18px;box-shadow:0 26px 50px -30px rgba(20,19,18,.5)}
+.pcard .kind{position:absolute;top:12px;left:12px;z-index:3;background:var(--paper);color:var(--ink);font-family:var(--f-mono);font-size:.68rem;letter-spacing:.08em;text-transform:uppercase;border-radius:999px;padding:.4em .8em}
+.pcard .kind.info{background:var(--accent);color:var(--paper)}
+.pcard .net{position:absolute;top:10px;right:10px;z-index:3}
+.pcard .who{font-family:var(--f-mono);font-size:.72rem;letter-spacing:.1em;text-transform:uppercase;color:var(--accent)}
+.pcard .cap{font-weight:600;line-height:1.3}
+.pcard .meta{font-size:.82rem;color:var(--muted)}
+.pcard:hover .media video{transform:scale(1.05)}
+.pcard:hover .net{background:var(--ink);color:var(--paper)}
+.progress{height:2px;background:var(--line);border-radius:2px;overflow:hidden;margin-top:6px}
+.progress i{display:block;height:100%;width:100%;background:var(--ink);transform-origin:left;transform:scaleX(0)}
+
+/* BANDA RETRATO */
+.band{background:var(--night);color:var(--paper)}
+.band .wrap{display:grid;grid-template-columns:minmax(0,5fr) minmax(0,7fr);gap:clamp(32px,6vw,96px);align-items:center;padding-block:clamp(80px,10vw,140px)}
+@media (max-width:860px){.band .wrap{grid-template-columns:minmax(0,1fr)}}
+.band .frame{background:#1a1918}
+.band .quote{font-family:var(--f-display);font-stretch:118%;font-weight:700;font-size:clamp(2rem,4.6vw,4.2rem);line-height:1;letter-spacing:-.02em;text-transform:uppercase;text-wrap:balance}
+.band .quote em{font-style:normal;color:var(--accent)}
+.band p.small{color:#A8A29A;margin-top:24px;max-width:46ch}
+.band .label{color:#A8A29A}
+
+/* CONTACTO */
+.contact{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:clamp(32px,6vw,96px);align-items:start}
+@media (max-width:860px){.contact{grid-template-columns:minmax(0,1fr)}}
+.contact .lede{color:var(--muted);margin-top:20px;max-width:40ch}
+.socials{margin-top:36px;border-top:1px solid var(--line)}
+.social{display:flex;justify-content:space-between;align-items:center;gap:12px;text-decoration:none;padding:20px 0;border-bottom:1px solid var(--line);font-family:var(--f-display);font-stretch:118%;font-weight:700;font-size:clamp(1.3rem,2.4vw,1.9rem);text-transform:uppercase;letter-spacing:-.01em;transition:color .3s,padding .5s var(--ease)}
+.social .l{display:flex;align-items:center;gap:14px}
+.social small{font-family:var(--f-mono);font-weight:400;font-size:.75rem;letter-spacing:.06em;text-transform:none;color:var(--muted)}
+.social:hover{color:var(--accent);padding-left:12px}
+form{background:var(--paper);border-radius:24px;padding:clamp(22px,3vw,40px);display:grid;gap:18px}
+form h3{font-family:var(--f-display);font-stretch:118%;font-weight:700;font-size:1.6rem;text-transform:uppercase}
+.field{display:grid;gap:6px}
+.row2{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,180px),1fr));gap:18px}
+label{font-family:var(--f-mono);font-size:.7rem;letter-spacing:.12em;text-transform:uppercase;color:var(--muted)}
+input,select,textarea{font:500 1rem var(--f-body);color:var(--ink);background:var(--bg);border:1px solid transparent;border-radius:12px;padding:.85em .95em;width:100%;min-width:0;transition:border-color .2s}
+input:focus,select:focus,textarea:focus{outline:none;border-color:var(--ink)}
+.out{display:grid;gap:10px}
+.out textarea{min-height:140px;resize:vertical}
+.out .acts{display:flex;flex-wrap:wrap;gap:10px}
+.note{font-size:.82rem;color:var(--muted)}
+.btn.wa{background:#1F8F4E}
+.btn.wa:hover{background:var(--ink)}
+.cover{position:absolute;inset:0;z-index:2;border-radius:18px}
+.vcard,.icard{position:relative}
+.nets{z-index:4}
+.rank,.vcard .views,.icard .badge{pointer-events:none}
+.vcard:hover .cap,.icard:hover .who{text-decoration:underline;text-underline-offset:4px}
+
+/* MARCAS */
+.logos{display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:1px;background:var(--line);border:1px solid var(--line);border-radius:20px;overflow:hidden}
+@media (max-width:760px){.logos{grid-template-columns:repeat(2,minmax(0,1fr))}}
+.logo-slot{background:var(--bg);aspect-ratio:16/9;display:grid;place-items:center;padding:12%;transition:background .3s}
+.logo-slot:hover{background:var(--paper)}
+.logo-slot img{max-width:100%;max-height:100%;object-fit:contain;filter:grayscale(1);opacity:.75;transition:filter .3s,opacity .3s}
+.logo-slot:hover img{filter:none;opacity:1}
+.logo-slot span{font-family:var(--f-display);font-stretch:112%;font-weight:700;font-size:clamp(.85rem,1.4vw,1.1rem);color:#9C958B;text-transform:uppercase;text-align:center;line-height:1.1}
+
+footer{border-top:1px solid var(--line);padding-block:28px}
+footer .wrap{display:flex;flex-wrap:wrap;justify-content:space-between;gap:12px;font-size:.82rem;color:var(--muted)}
+</style>
+</head>
+<body>
+<nav class="nav" id="nav">
+  <div class="wrap">
+    <a class="brand" href="#top">EIPY<i>.</i></a>
+    <ul>
+      <li><a href="#quien">Quién es</a></li>
+      <li><a href="#infomerciales">Infomerciales</a></li>
+      <li><a href="#numeros">Números</a></li>
+      <li><a href="#virales">Virales</a></li>
+      <li><a href="#portafolio">Portafolio</a></li>
+      <li><a href="#marcas">Marcas</a></li>
+    </ul>
+    <a class="btn" href="#contacto">Cotizar <span class="arr">→</span></a>
+  </div>
+</nav>
+
+<header class="hero" id="top">
+  <div class="wrap">
+    <div class="hero-meta">
+      <span class="label dot">Creador de contenido · San Felipe, Venezuela</span>
+      <span class="label">@soyeipy</span>
+    </div>
+    <div class="stage">
+      <div class="figure" id="heroFig">
+        <div class="photo"><img src="img/eipy-01.jpg" alt="Anthony Prado, Eipy, sentado en un banco de estudio con lentes oscuros"></div>
+        <div class="word" id="heroWord">
+          <span class="ghost" aria-hidden="true">EIPY</span>
+          <h1 aria-label="Eipy"><span>E</span><span>I</span><span>P</span><span>Y</span></h1>
+        </div>
+        <div class="cut" aria-hidden="true"><img src="img/eipy-01-cut.webp" alt=""></div>
+      </div>
+    </div>
+    <div class="hero-sub">
+      <p><b>Anthony Prado</b> hace infomerciales, sketches de comedia cotidiana y publicidad integrada para marcas. <b id="heroViews">86.7 millones</b> de reproducciones entre Instagram, TikTok y Facebook.</p>
+      <div class="acts">
+        <a class="btn" href="#infomerciales">Ver infomerciales <span class="arr">→</span></a>
+        <a class="btn light" href="#contacto">Trabajemos juntos</a>
+      </div>
+    </div>
+  </div>
+  <div class="wheel-zone" id="wheelZone" aria-hidden="true"><div class="wheel" id="wheel"></div></div>
+</header>
+
+<section class="sec" id="quien">
+  <div class="wrap about">
+    <div class="frame fx-img"><img class="par" src="img/eipy-03.jpg" alt="Retrato de Anthony Prado sobre fondo negro"><span class="tag">Anthony Prado</span></div>
+    <div>
+      <span class="label dot fx">Quién es</span>
+      <p class="statement fx">Eipy convierte situaciones de todos los días en historias que la gente <em>comparte</em>, y mete a las marcas dentro de la historia sin que se sienta como un anuncio.</p>
+      <div class="facts">
+        <div class="fx"><h3>Lo que hace</h3><p>Infomerciales con producción profesional, sketches de comedia, publicidad integrada y contenido viral.</p></div>
+        <div class="fx"><h3>Dónde publica</h3><p>Instagram, TikTok y Facebook. Más de <span id="factVideos">837</span> videos publicados.</p></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="sec info" id="infomerciales">
+  <div class="wrap">
+    <div class="sec-head">
+      <div><span class="label dot fx">Producción profesional</span><h2 class="fx" style="margin-top:18px">Infomerciales</h2></div>
+      <p class="lede fx">Grabados con cámara profesional, iluminación y equipo de producción completo. El formato que mejor cuida la imagen de una marca.</p>
+    </div>
+    <div class="i-grid" id="igrid"></div>
+    <div class="i-specs fx"><span>Cámara profesional</span><span>Iluminación de set</span><span>Guion y dirección</span><span>Edición y color</span></div>
+  </div>
+</section>
+
+<section class="sec" id="numeros">
+  <div class="wrap">
+    <div class="sec-head">
+      <h2 class="fx">Los números</h2>
+      <p class="lede fx" id="numLede">Cifras públicas. Las reproducciones suman las tres plataformas.</p>
+    </div>
+    <div class="n-grid">
+      <div class="n dark fx"><span class="label">Reproducciones</span><div><p class="big"><span class="count" id="nV">86.7</span><sup>M</sup></p><p>Entre Instagram, TikTok y Facebook</p></div></div>
+      <div class="n fx"><span class="label">Seguidores</span><div><p class="big"><span class="count" id="nS">111</span><sup>K</sup></p><p>Combinados en las tres redes</p></div></div>
+      <div class="n fx"><span class="label">Engagement TikTok</span><div><p class="big"><span class="count" id="nE">7.2</span><sup>%</sup></p><p id="nEtxt">Likes sobre vistas</p></div></div>
+    </div>
+    <div class="split">
+      <div class="plats" id="plats"></div>
+      <div class="float-card fx-img">
+        <div class="frame"><img class="par" src="img/eipy-02.jpg" alt="Eipy en blanco y negro, sentado en una silla de estudio"></div>
+        <span class="badge" id="badgeViews">+86.7M vistas</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="sec" id="virales" style="padding-top:0">
+  <div class="wrap">
+    <div class="sec-head">
+      <h2 class="fx">Top virales</h2>
+      <p class="lede fx">Ordenados por reproducciones sumadas entre plataformas. Toca el ícono de Instagram o TikTok para ver el video.</p>
+    </div>
+    <div class="v-grid" id="vgrid"></div>
+  </div>
+</section>
+
+<section class="sec" id="portafolio" style="padding-top:0;padding-bottom:clamp(60px,8vw,110px)">
+  <div class="wrap">
+    <div class="sec-head" style="margin-bottom:28px">
+      <h2 class="fx">Portafolio</h2>
+      <p class="lede fx">Infomerciales, publicidad integrada, sketches y piezas virales. Desliza hacia los lados para recorrerlo.</p>
+    </div>
+    <div class="p-bar fx">
+      <div class="chips" id="chips" role="group" aria-label="Filtrar portafolio"></div>
+      <div class="arrows"><button type="button" id="prev" aria-label="Anterior">←</button><button type="button" id="next" aria-label="Siguiente">→</button></div>
+    </div>
+  </div>
+  <div class="rail" id="rail"></div>
+  <div class="wrap"><div class="progress"><i id="prog"></i></div></div>
+</section>
+
+<section class="band">
+  <div class="wrap">
+    <div class="frame fx-img"><img class="par" src="img/eipy-04.jpg" alt="Anthony Prado sonriendo, retrato sobre fondo negro"></div>
+    <div>
+      <span class="label dot fx">Para marcas</span>
+      <p class="quote fx" style="margin-top:22px">Tu producto dentro de una historia que la gente <em>quiere ver</em> hasta el final.</p>
+    </div>
+  </div>
+</section>
+
+<section class="sec" id="contacto">
+  <div class="wrap contact">
+    <div>
+      <span class="label dot fx">Contacto</span>
+      <h2 class="fx" style="margin-top:20px">Hablemos de tu marca</h2>
+      <p class="lede fx">Infomerciales, campañas, publicidad integrada o colaboraciones. Escríbele por cualquiera de sus redes.</p>
+      <div class="socials" id="socials"></div>
+    </div>
+    <form id="quote" class="fx" novalidate>
+      <h3>Cotiza con Eipy</h3>
+      <div class="field"><label for="q-marca">Nombre de tu marca o negocio</label><input id="q-marca" autocomplete="organization" placeholder="Escribe el nombre de tu marca"></div>
+      <div class="field"><label for="q-tipo">Tipo de pieza</label>
+        <select id="q-tipo"><option>Infomercial</option><option>Publicidad integrada en sketch</option><option>Contenido viral</option><option>Colaboración</option><option>Otro</option></select></div>
+      <div class="field"><label for="q-ubic">Ubicación</label><input id="q-ubic" placeholder="Ciudad o estado"></div>
+      <div class="field"><label for="q-rubro">A qué se dedica tu negocio</label><input id="q-rubro" placeholder="Ej: restaurante, concesionario, tienda"></div>
+      <a class="btn wa" id="waBtn" href="https://wa.link/70b3xs" target="_blank" rel="noopener" style="justify-self:start"><svg class="ico" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true" style="width:1.15em;height:1.15em"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2zm0 18.2a8.2 8.2 0 0 1-4.2-1.15l-.3-.18-3 .78.8-2.9-.2-.3A8.2 8.2 0 1 1 12 20.2zm4.5-6.1c-.25-.12-1.46-.72-1.69-.8s-.39-.12-.55.12-.63.8-.78.96-.29.19-.53.06a6.7 6.7 0 0 1-3.32-2.9c-.25-.43.25-.4.72-1.33a.45.45 0 0 0-.02-.43c-.06-.12-.55-1.33-.76-1.82s-.4-.41-.55-.42h-.47a.9.9 0 0 0-.65.3 2.73 2.73 0 0 0-.85 2.03 4.74 4.74 0 0 0 1 2.52 10.86 10.86 0 0 0 4.16 3.68c1.55.67 2.16.73 2.93.61a2.5 2.5 0 0 0 1.65-1.16 2.04 2.04 0 0 0 .14-1.16c-.06-.1-.22-.16-.47-.28z"/></svg>Contacta ahora</a>
+      <p class="note" id="waNote">Se abre WhatsApp. Tus datos se copian para que los pegues en el chat.</p>
+    </form>
+  </div>
+</section>
+
+<section class="sec" id="marcas" style="padding-top:0">
+  <div class="wrap">
+    <div class="sec-head">
+      <h2 class="fx">Marcas</h2>
+      <p class="lede fx">Algunas de las marcas que han trabajado con Eipy.</p>
+    </div>
+    <div class="logos" id="logos"></div>
+  </div>
+</section>
+
+<footer><div class="wrap"><span>EIPY · Anthony Prado · San Felipe, Yaracuy</span><span id="footDate">Cifras públicas</span></div></footer>
+
+<script src="contenido.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/lenis@1.1.13/dist/lenis.min.js"></script>
+<script>
+const D = window.EIPY;
+const $ = id => document.getElementById(id);
+const esc = s => String(s).replace(/[&<>"]/g, m => ({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[m]));
+const clean = s => String(s).replace(/[^\p{L}\p{N}\s?¿!¡.,'…]/gu, "").trim();
+const net = u => u.includes("tiktok") ? "tt" : "ig";
+const ICON = {
+  ig: `<svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1.1" fill="currentColor" stroke="none"/></svg>`,
+  tt: `<svg class="ico" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M16.6 5.82A4.28 4.28 0 0 1 15.54 3h-3.09v12.4a2.59 2.59 0 0 1-2.59 2.5 2.6 2.6 0 0 1 0-5.2c.27 0 .53.04.78.11V9.66a5.72 5.72 0 0 0-.78-.05 5.69 5.69 0 1 0 5.68 5.69V9.01a7.35 7.35 0 0 0 4.3 1.38V7.3a4.3 4.3 0 0 1-3.24-1.48z"/></svg>`,
+  fb: `<svg class="ico" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M13.5 21v-7.5h2.5l.4-3h-2.9V8.6c0-.87.25-1.46 1.5-1.46h1.6V4.46A21 21 0 0 0 14.27 4.3c-2.3 0-3.87 1.4-3.87 3.98v2.22H7.8v3h2.6V21z"/></svg>`
+};
+const NAME = {ig:"Instagram", tt:"TikTok"};
+const TONES = ["ink","sand","stone","accent","paper"];
+const toneOf = k => TONES[[...k].reduce((a,c) => a + c.charCodeAt(0), 0) % TONES.length];
+
+function media(k, title, cls=""){
+  const vid = D.previews.includes(k) ? `<video muted loop playsinline preload="none" data-src="previews/${k}.mp4" poster="previews/${k}.jpg"></video>` : "";
+  return `<div class="media tone-${toneOf(k)} ${cls}"><div class="ph"><span class="t">${esc(clean(title))}</span></div>${vid}</div>`;
+}
+const netBtn = (u, label) => `<a class="net" href="${u}" target="_blank" rel="noopener" aria-label="${label || "Ver en " + NAME[net(u)]}">${ICON[net(u)]}</a>`;
+
+/* Números */
+const N = D.numeros;
+$("nV").textContent = N.vistas; $("nV").dataset.to = N.vistas; $("nV").dataset.dec = 1;
+$("nS").textContent = N.seguidores; $("nS").dataset.to = N.seguidores; $("nS").dataset.dec = 0;
+$("nE").textContent = N.engagement; $("nE").dataset.to = N.engagement; $("nE").dataset.dec = 1;
+$("nEtxt").textContent = `Likes sobre vistas, con ${N.likesTikTok} likes en total`;
+$("heroViews").textContent = `${N.vistas} millones`;
+$("badgeViews").textContent = `+${N.vistas}M vistas`;
+$("factVideos").textContent = N.videos;
+$("numLede").textContent = `Cifras públicas al ${N.fecha}. Las reproducciones suman las tres plataformas.`;
+$("footDate").textContent = `Cifras públicas al ${N.fecha}`;
+const maxV = Math.max(...N.plataformas.map(p => p.valor));
+$("plats").innerHTML = N.plataformas.map(p => `
+  <div class="plat fx"><div class="row"><b>${p.nombre === "TikTok" ? ICON.tt : p.nombre === "Instagram" ? ICON.ig : ICON.fb}${p.nombre}</b><span>${p.seguidores} seguidores · ${p.videos}</span></div>
+  <div class="track"><i style="width:${(p.valor / maxV * 100).toFixed(1)}%"></i></div><p class="val">${p.vistas}</p></div>`).join("");
+
+/* Infomerciales */
+$("igrid").innerHTML = D.infomerciales.map(i => `
+  <article class="icard fx-card">
+    <a class="cover" href="${i.url}" target="_blank" rel="noopener" aria-label="Ver infomercial de ${esc(i.cliente)} en Instagram"></a>
+    <div style="position:relative">${media(i.k, i.cliente)}<span class="badge">Infomercial</span><div class="nets">${netBtn(i.url)}</div></div>
+    <p class="who">${esc(i.cliente)}</p>
+    <p class="cap">${esc(i.titulo)}</p>
+  </article>`).join("");
+
+/* Virales */
+$("vgrid").innerHTML = D.top.map((t,i) => `
+  <article class="vcard fx-card">
+    <a class="cover" href="${(t.links.find(l => l[0] === "ig") || t.links[0])[2]}" target="_blank" rel="noopener" aria-label="Ver ${esc(clean(t.titulo))} en Instagram"></a>
+    <div style="position:relative">
+      ${media(t.k, t.titulo, "shade")}
+      <span class="rank">#${i+1}</span>
+      <div class="nets">${t.links.map(([n,,u]) => netBtn(u)).join("")}</div>
+      <div class="views"><b>${t.vistas}</b><span class="label" style="color:inherit">${t.fecha}</span></div>
+    </div>
+    <p class="cap">${esc(t.titulo)}</p>
+    ${t.nota ? `<p class="split-views">${esc(t.nota)}</p>` : ""}
+    <p class="split-views">${t.links.map(([n,v]) => `<span>${ICON[n]}${v}</span>`).join("")}</p>
+  </article>`).join("");
+
+/* Portafolio */
+const CATS = [["all","Todo"],["info","Infomerciales"],["pub","Publicidad"],["sketch","Sketches"],["viral","Virales"]];
+const KIND = {info:"Infomercial", pub:"Publicidad", sketch:"Sketch", viral:"Viral"};
+$("chips").innerHTML = CATS.map(([k,l]) => `<button type="button" data-f="${k}" aria-pressed="${k==="all"}">${l}<span>${k === "all" ? D.portafolio.length : D.portafolio.filter(p => p.tipo.includes(k)).length}</span></button>`).join("");
+const rail = $("rail");
+rail.innerHTML = D.portafolio.map(p => `
+  <a class="pcard" data-c="${p.tipo.join(" ")}" href="${p.url}" target="_blank" rel="noopener" aria-label="${esc(p.cliente)}: ${esc(clean(p.titulo))}, ver en ${NAME[net(p.url)]}">
+    <div class="bob">
+      <div style="position:relative">${media(p.k, clean(p.titulo) || p.cliente)}<span class="kind ${p.tipo[0]}">${KIND[p.tipo[0]]}</span><span class="net" aria-hidden="true">${ICON[net(p.url)]}</span></div>
+      <p class="who">${esc(p.cliente)}</p>
+      <p class="cap">${esc(p.titulo)}</p>
+      <p class="meta">${p.vistas ? p.vistas + " vistas" : (p.tipo[0] === "sketch" ? "Serie de 3 partes" : "Producción profesional")}</p>
+    </div>
+  </a>`).join("");
+
+/* Redes de contacto */
+$("socials").innerHTML = [["ig","Instagram","@soyeipy","https://www.instagram.com/soyeipy"],["tt","TikTok","@soyeipy","https://www.tiktok.com/@soyeipy"],["fb","Facebook","/soyeipy","https://www.facebook.com/soyeipy"]]
+  .map(([n,l,h,u]) => `<a class="social fx" href="${u}" target="_blank" rel="noopener"><span class="l">${ICON[n].replace('class="ico"','class="ico" style="width:.9em;height:.9em"')}${l}</span><small>${h} ↗</small></a>`).join("");
+
+/* Marcas */
+$("logos").innerHTML = D.marcas.map(m => `<div class="logo-slot fx-logo">${m.logo ? `<img src="${m.logo}" alt="${esc(m.nombre)}" loading="lazy">` : `<span>${esc(m.nombre)}</span>`}</div>`).join("");
+
+/* Rueda del hero */
+const igOf = t => (t.links.find(l => l[0] === "ig") || t.links[0])[2];
+const WHEEL_ITEMS = [
+  ...D.infomerciales.map(i => ({k:i.k, t:i.cliente, u:i.url})),
+  ...D.top.map(t => ({k:t.k, t:t.titulo, u:igOf(t)})),
+  {photo:"img/eipy-02.jpg"},
+  ...D.portafolio.filter(p => p.tipo.includes("pub")).slice(1,6).map(p => ({k:p.k, t:p.titulo, u:p.url})),
+  {photo:"img/eipy-04.jpg"}
+];
+const wheel = $("wheel"), zone = $("wheelZone"), STEP = 10, COUNT = 36;
+wheel.innerHTML = Array.from({length:COUNT}, (_,i) => {
+  const it = WHEEL_ITEMS[i % WHEEL_ITEMS.length];
+  const inner = it.photo ? `<div class="media photo-tile"><img src="${it.photo}" alt="" loading="lazy"></div>` : `<a href="${it.u}" target="_blank" rel="noopener" tabindex="-1">${media(it.k, it.t)}</a>`;
+  return `<div class="wcard" data-a="${i*STEP}">${inner}</div>`;
+}).join("");
+function layoutWheel(){
+  const w = zone.clientWidth, h = zone.clientHeight, R = Math.max(560, w * .62), cw = Math.min(170, Math.max(96, R * .155));
+  wheel.style.top = (R + h * .2 + cw * .9) + "px";
+  wheel.querySelectorAll(".wcard").forEach(c => {
+    c.style.setProperty("--cw", cw + "px");
+    c.style.transform = `rotate(${c.dataset.a}deg) translate(-50%, ${-R}px)`;
+    c.style.marginTop = (-cw * 16/9 / 2) + "px";
+  });
+}
+layoutWheel(); addEventListener("resize", layoutWheel);
+
+/* Videos: cargar y reproducir solo en pantalla */
+const vio = new IntersectionObserver(es => es.forEach(e => {
+  const v = e.target;
+  if (e.isIntersecting){ if (!v.src) v.src = v.dataset.src; v.play().catch(()=>{}); } else v.pause();
+}), {rootMargin:"200px"});
+document.querySelectorAll("video[data-src]").forEach(v => vio.observe(v));
+
+/* Filtro, flechas, arrastre */
+let filterTo = k => rail.querySelectorAll(".pcard").forEach(c => c.hidden = k !== "all" && !c.dataset.c.split(" ").includes(k));
+$("chips").addEventListener("click", e => {
+  const b = e.target.closest("button"); if (!b) return;
+  $("chips").querySelectorAll("button").forEach(x => x.setAttribute("aria-pressed", x === b));
+  filterTo(b.dataset.f);
+});
+const step = () => (rail.querySelector(".pcard:not([hidden])")?.offsetWidth || 260) * 2;
+$("prev").onclick = () => rail.scrollBy({left:-step(), behavior:"smooth"});
+$("next").onclick = () => rail.scrollBy({left: step(), behavior:"smooth"});
+const upd = () => { const m = rail.scrollWidth - rail.clientWidth; $("prog").style.transform = `scaleX(${m > 0 ? Math.max(.06, rail.scrollLeft / m) : 1})`; };
+rail.addEventListener("scroll", upd, {passive:true}); upd();
+let down = false, sx = 0, sl = 0, moved = 0;
+rail.addEventListener("pointerdown", e => { if (e.pointerType !== "mouse") return; down = true; moved = 0; sx = e.clientX; sl = rail.scrollLeft; });
+addEventListener("pointermove", e => { if (!down) return; const dx = e.clientX - sx; moved = Math.max(moved, Math.abs(dx)); if (moved > 6) rail.classList.add("dragging"); rail.scrollLeft = sl - dx; });
+addEventListener("pointerup", () => { down = false; setTimeout(() => rail.classList.remove("dragging"), 0); });
+rail.addEventListener("click", e => { if (moved > 6){ e.preventDefault(); moved = 0; } }, true);
+rail.addEventListener("wheel", e => { if (Math.abs(e.deltaX) > Math.abs(e.deltaY)) e.stopPropagation(); }, {passive:true});
+
+/* Formulario */
+const reduce = matchMedia("(prefers-reduced-motion: reduce)").matches;
+$("waBtn").href = D.whatsapp;
+$("quote").addEventListener("submit", e => e.preventDefault());
+$("waBtn").addEventListener("click", () => {
+  const v = id => $(id).value.trim();
+  const msg = `Hola Eipy, quiero cotizar contenido.\n\nMarca o negocio: ${v("q-marca") || "-"}\nTipo de pieza: ${v("q-tipo")}\nUbicación: ${v("q-ubic") || "-"}\nA qué se dedica: ${v("q-rubro") || "-"}`;
+  try { navigator.clipboard.writeText(msg).then(() => $("waNote").textContent = "Datos copiados. Pégalos en el chat de WhatsApp.", () => {}); } catch(_) {}
+});
+addEventListener("scroll", () => $("nav").classList.toggle("solid", scrollY > 40), {passive:true});
+
+/* ---------- MOVIMIENTO ---------- */
+const desktop = matchMedia("(min-width: 861px)").matches;
+if (window.gsap && window.ScrollTrigger && !reduce){
+  gsap.registerPlugin(ScrollTrigger);
+
+  if (window.Lenis){
+    const lenis = new Lenis({lerp:.085, smoothWheel:true});
+    lenis.on("scroll", ScrollTrigger.update);
+    gsap.ticker.add(t => lenis.raf(t * 1000));
+    gsap.ticker.lagSmoothing(0);
+    document.querySelectorAll('a[href^="#"]').forEach(a => a.addEventListener("click", e => {
+      const el = document.querySelector(a.getAttribute("href")); if (!el) return;
+      e.preventDefault(); lenis.scrollTo(el, {offset:-72, duration:1.6});
+    }));
+  }
+
+  /* Hero: la foto entra, el nombre aparece detrás de Anthony */
+  const tl = gsap.timeline({defaults:{ease:"expo.out"}});
+  tl.from("#heroFig", {yPercent:30, scale:.85, opacity:0, duration:1.8})
+    .from(".word h1 span", {yPercent:70, opacity:0, filter:"blur(14px)", duration:1.6, stagger:.09}, "-=1.3")
+    .from(".word .ghost", {opacity:0, duration:1.6}, "-=1.3")
+    .from(".hero-meta > *, .hero-sub p, .hero-sub .btn", {y:30, opacity:0, duration:1.2, stagger:.07}, "-=1.3")
+    .from(".wcard .media", {yPercent:120, opacity:0, duration:1.8, stagger:{each:.025, from:"center"}}, "-=1.4")
+    .add(() => {
+      gsap.to("#heroFig .photo, #heroFig .cut", {y:-12, duration:3.6, ease:"sine.inOut", yoyo:true, repeat:-1});
+      gsap.to("#heroWord h1, #heroWord .ghost", {y:14, duration:4.6, ease:"sine.inOut", yoyo:true, repeat:-1});
+    }, 1.8);
+  /* Al bajar: la imagen se hunde hacia abajo y el nombre sube; quedan despegados y el nombre se lee completo */
+  const figH = () => document.getElementById("heroFig").offsetHeight;
+  const sep = {trigger:".hero", start:"top top", end:() => "+=" + Math.round(figH() * .95), scrub:1.1, invalidateOnRefresh:true};
+  gsap.to("#heroFig .photo, #heroFig .cut", {yPercent:105, scale:.9, ease:"power1.out", scrollTrigger:sep});
+  /* La imagen se difumina apenas empieza el scroll */
+  const fade = {trigger:".hero", start:"top top", end:() => "+=" + Math.round(figH() * .6), scrub:.6, invalidateOnRefresh:true};
+  gsap.fromTo("#heroFig .photo, #heroFig .cut", {opacity:1, filter:"blur(0px)"}, {opacity:.06, filter:"blur(6px)", ease:"power1.out", immediateRender:false, scrollTrigger:fade});
+  gsap.to("#heroWord", {y:() => -figH() * .12, scale:1.04, ease:"power1.out", scrollTrigger:sep});
+
+  /* Rueda */
+  const spin = gsap.to(wheel, {rotation:-360, duration:220, ease:"none", repeat:-1});
+  wheel.querySelectorAll(".wcard .media").forEach((m,i) => gsap.to(m, {y:-10, duration:2.4 + (i % 5) * .3, ease:"sine.inOut", yoyo:true, repeat:-1, delay:2 + (i % 7) * .2}));
+  let boost;
+  ScrollTrigger.create({onUpdate: self => {
+    spin.timeScale(1 + Math.min(Math.abs(self.getVelocity()) / 60, 22) * Math.sign(self.getVelocity() || 1));
+    clearTimeout(boost); boost = setTimeout(() => gsap.to(spin, {timeScale:1, duration:1.4, ease:"power2.out"}), 120);
+  }});
+
+  /* Elementos: entran flotando y salen suave */
+  const blur = desktop ? "blur(10px)" : "blur(0px)";
+  gsap.utils.toArray(".fx").forEach(el => {
+    gsap.fromTo(el, {y:70, opacity:0, filter:blur}, {y:0, opacity:1, filter:"blur(0px)", ease:"power2.out", scrollTrigger:{trigger:el, start:"top 96%", end:"top 62%", scrub:1.2}});
+    gsap.to(el, {y:-40, opacity:.15, ease:"power1.in", immediateRender:false, scrollTrigger:{trigger:el, start:"bottom 22%", end:"bottom -4%", scrub:1.2}});
+  });
+
+  /* Imágenes */
+  gsap.utils.toArray(".fx-img").forEach(fr => {
+    gsap.fromTo(fr, {y:110, scale:.9, opacity:0, rotate:-2}, {y:0, scale:1, opacity:1, rotate:0, ease:"power3.out", scrollTrigger:{trigger:fr, start:"top 98%", end:"top 50%", scrub:1.4}});
+    const img = fr.querySelector(".par");
+    if (img) gsap.fromTo(img, {yPercent:-6}, {yPercent:6, ease:"none", scrollTrigger:{trigger:fr, start:"top bottom", end:"bottom top", scrub:true}});
+    const inner = fr.querySelector(".frame"); if (inner) gsap.to(inner, {y:-12, duration:3.6, ease:"sine.inOut", yoyo:true, repeat:-1});
+  });
+
+  /* Tarjetas (infomerciales y virales) */
+  gsap.utils.toArray(".fx-card").forEach((c,i) => {
+    gsap.fromTo(c, {y:120 + (i % 4) * 30, opacity:0, rotate:(i % 2 ? 2 : -2)}, {y:0, opacity:1, rotate:0, ease:"power3.out", scrollTrigger:{trigger:c, start:"top 102%", end:"top 60%", scrub:1.3}});
+    gsap.to(c.querySelector(".media"), {y:-8, duration:2.8 + (i % 4) * .35, ease:"sine.inOut", yoyo:true, repeat:-1, delay:i * .2});
+  });
+
+  /* Portafolio */
+  rail.querySelectorAll(".pcard .bob").forEach((b,i) => gsap.to(b, {y:-12, rotate:(i % 2 ? .8 : -.8), duration:2.6 + (i % 5) * .3, ease:"sine.inOut", yoyo:true, repeat:-1, delay:(i % 6) * .25}));
+  gsap.fromTo(".pcard", {x:180, opacity:0}, {x:0, opacity:1, ease:"power3.out", stagger:.05, scrollTrigger:{trigger:rail, start:"top 95%", end:"top 55%", scrub:1.2}});
+  filterTo = k => {
+    const cards = [...rail.querySelectorAll(".pcard")];
+    gsap.to(cards, {opacity:0, y:30, duration:.35, ease:"power2.in", stagger:.015, onComplete:() => {
+      cards.forEach(c => c.hidden = k !== "all" && !c.dataset.c.split(" ").includes(k));
+      rail.scrollTo({left:0}); upd();
+      gsap.fromTo(cards.filter(c => !c.hidden), {opacity:0, y:40, x:60}, {opacity:1, y:0, x:0, duration:.9, ease:"expo.out", stagger:.05});
+    }});
+  };
+
+  /* Números */
+  document.querySelectorAll(".count").forEach(el => {
+    const to = +el.dataset.to, dec = +el.dataset.dec, o = {n:0};
+    ScrollTrigger.create({trigger:el, start:"top 92%", onEnter:() => gsap.fromTo(o, {n:0}, {n:to, duration:2.4, ease:"expo.out", onUpdate:() => el.textContent = o.n.toFixed(dec)})});
+  });
+  gsap.utils.toArray(".track i").forEach(b => gsap.fromTo(b, {scaleX:0}, {scaleX:1, ease:"power3.out", scrollTrigger:{trigger:b, start:"top 95%", end:"top 65%", scrub:1}}));
+  gsap.fromTo(".fx-logo", {y:40, opacity:0}, {y:0, opacity:1, stagger:.06, ease:"power3.out", scrollTrigger:{trigger:"#logos", start:"top 95%", end:"top 60%", scrub:1}});
+
+  addEventListener("load", () => ScrollTrigger.refresh());
+}
+</script>
+</body>
+</html>
