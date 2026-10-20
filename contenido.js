@@ -84,7 +84,6 @@ window.EIPY = {
     { nombre: "Mazopán",           logo: "logos/mazopan.png" },
     { nombre: "Leña & Carbón",     logo: "logos/lena-carbon.png" },
     { nombre: "Que Roles",         logo: "logos/que-roles.png" },
-    { nombre: "Esparta",           logo: "logos/helmet.png" },
     { nombre: "Aponte Barbershop", logo: "logos/aponte.png" },
     { nombre: "Kings Donuts SF",   logo: "logos/kings-donuts.png" },
     { nombre: "VICHO",             logo: "logos/vicho.png" },
