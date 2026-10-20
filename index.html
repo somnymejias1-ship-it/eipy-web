@@ -245,13 +245,13 @@ input:focus,select:focus,textarea:focus{outline:none;border-color:var(--ink)}
 .vcard:hover .cap,.icard:hover .who{text-decoration:underline;text-underline-offset:4px}
 
 /* MARCAS */
-.logos{display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:1px;background:var(--line);border:1px solid var(--line);border-radius:20px;overflow:hidden}
-@media (max-width:760px){.logos{grid-template-columns:repeat(2,minmax(0,1fr))}}
-.logo-slot{background:var(--bg);aspect-ratio:16/9;display:grid;place-items:center;padding:12%;transition:background .3s}
-.logo-slot:hover{background:var(--paper)}
-.logo-slot img{max-width:100%;max-height:100%;object-fit:contain;filter:grayscale(1);opacity:.75;transition:filter .3s,opacity .3s}
-.logo-slot:hover img{filter:none;opacity:1}
-.logo-slot span{font-family:var(--f-display);font-stretch:112%;font-weight:700;font-size:clamp(.85rem,1.4vw,1.1rem);color:#9C958B;text-transform:uppercase;text-align:center;line-height:1.1}
+.logos{display:flex;flex-wrap:wrap;align-items:center;justify-content:center;gap:20px 44px;padding:4px 0 8px}
+.logo-slot{display:flex;align-items:center;justify-content:center;height:34px}
+.logo-slot img{height:100%;width:auto;max-width:132px;object-fit:contain;opacity:.5;filter:grayscale(1);transition:opacity .25s}
+.logo-slot:hover img{opacity:1}
+.logo-slot span{font-family:var(--f-display);font-stretch:112%;font-weight:700;font-size:.8rem;color:#9C958B;text-transform:uppercase;letter-spacing:.02em;text-align:center;line-height:1.1;transition:color .25s}
+.logo-slot:hover span{color:var(--ink)}
+@media (max-width:760px){.logos{gap:16px 28px}.logo-slot{height:26px}.logo-slot img{max-width:96px}.logo-slot span{font-size:.7rem}}
 
 footer{border-top:1px solid var(--line);padding-block:28px}
 footer .wrap{display:flex;flex-wrap:wrap;justify-content:space-between;gap:12px;font-size:.82rem;color:var(--muted)}

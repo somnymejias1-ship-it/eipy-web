@@ -1,0 +1,11 @@
+{
+  "version": "0.0.1",
+  "configurations": [
+    {
+      "name": "eipy-static",
+      "runtimeExecutable": "node",
+      "runtimeArgs": ["C:\\Users\\Somny\\AppData\\Local\\Temp\\claude\\C--Users-Somny\\7af80d65-d988-42a4-b309-63c4c5ade04b\\scratchpad\\static_server.js", "C:\\Users\\Somny\\Videos\\eipy-web\\eipy-sitio", "8787"],
+      "port": 8787
+    }
+  ]
+}

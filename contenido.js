@@ -80,16 +80,28 @@ window.EIPY = {
 
   /* ---------- MARCAS (logo: ruta del archivo en logos/, o null para mostrar el nombre) ---------- */
   marcas: [
+    { nombre: "JAC San Felipe",    logo: "logos/jac.png" },
+    { nombre: "Mazopán",           logo: "logos/mazopan.png" },
+    { nombre: "Leña & Carbón",     logo: "logos/lena-carbon.png" },
+    { nombre: "Que Roles",         logo: "logos/que-roles.png" },
+    { nombre: "Esparta",           logo: "logos/helmet.png" },
+    { nombre: "Aponte Barbershop", logo: "logos/aponte.png" },
+    { nombre: "Kings Donuts SF",   logo: "logos/kings-donuts.png" },
+    { nombre: "VICHO",             logo: "logos/vicho.png" },
+    { nombre: "Antojitos",         logo: "logos/antojitos.png" },
+    { nombre: "NN",                logo: null },
+    { nombre: "Gymcell",           logo: "logos/gymcell.png" },
+    { nombre: "iPhone Center 254", logo: "logos/iphone-center.png" },
+    { nombre: "Larryshop",         logo: "logos/larryshop.png" },
+    { nombre: "Siontorq",          logo: "logos/siontorq.png" },
+    { nombre: "Sion Market",       logo: "logos/sion-market.png" },
+    { nombre: "Exotecch",          logo: "logos/exotecch.png" },
+    { nombre: "El Campo Grill",    logo: "logos/el-campo-grill.png" },
     { nombre: "Burguer Almendrón", logo: null },
     { nombre: "Cashea",            logo: null },
     { nombre: "Polar Light",       logo: null },
-    { nombre: "JAC San Felipe",    logo: null },
     { nombre: "One Rides · TIGRA", logo: null },
-    { nombre: "VICHO",             logo: null },
-    { nombre: "Don Perrito SF",    logo: null },
-    { nombre: "Mazopán",           logo: null },
-    { nombre: "Kings Donuts SF",   logo: null },
-    { nombre: "Antojitos",         logo: null }
+    { nombre: "Don Perrito SF",    logo: null }
   ],
 
   /* Link de WhatsApp del botón "Contacta ahora" */
