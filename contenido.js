@@ -97,11 +97,10 @@ window.EIPY = {
     { nombre: "Sion Market",       logo: "logos/sion-market.png" },
     { nombre: "Exotecch",          logo: "logos/exotecch.png" },
     { nombre: "El Campo Grill",    logo: "logos/el-campo-grill.png" },
-    { nombre: "Burguer Almendrón", logo: null },
-    { nombre: "Cashea",            logo: null },
-    { nombre: "Polar Light",       logo: null },
-    { nombre: "One Rides · TIGRA", logo: null },
-    { nombre: "Don Perrito SF",    logo: null }
+    { nombre: "Megazuki",          logo: "logos/megazuki.png" },
+    { nombre: "Burguer Almendrón", logo: "logos/burguer-almendron.png" },
+    { nombre: "One Rides · TIGRA", logo: "logos/one-rides.png" },
+    { nombre: "Don Perrito SF",    logo: "logos/don-perrito.png" }
   ],
 
   /* Link de WhatsApp del botón "Contacta ahora" */
